@@ -2,10 +2,7 @@
 
 ### Team members
 
-Šimon Roubal
-Michaela Ryšavá
-Ondřej Ryšavý 
-Tomáš Rotrekl
+Šimon Roubal, Michaela Ryšavá, Ondřej Ryšavý, Tomáš Rotrekl
 
 [Link to GitHub project folder](https://github.com/xrysav25/DE1_Parking_assistant)
 
@@ -19,17 +16,22 @@ Write your text here.
 ### LED bargaph module
 
 For LED visualization we have chosem bargraph with 10 LEDs and segments with diferent colors, as can be seen below.
-
+![bargaph](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/Bargaph%20example.png)
+*Example of used bargraph[1]*
 Its first segment is blue which will represent ON/OFF state indication. Other segments represent actual distance ranging from green to red. For the actual bargraph we have designed small module board, that will conect to Arty board through 2 Pmod connectors.
-
+![model of board](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/Module%20model.png)
+*Model of designed board*
 Board is fitted with bargraph itself, liminig resistors and 2 pinheader blocks. Board was designed in Autodesk EAGLE.
-
+![board LEDs](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/Module%20board.png)
+*Board design*
+![schematic LEDs](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/Module%20schematic.png)
+*Board schematic*
 ## VHDL modules description and simulations
 
 ### LED bargaph module
 LED module takes 2 inputs and has 1 output. One of the inputs is enable signal, which determines if module can function or not. Second input is distance level represented by 4-bit std logic vecotr. Output is 10-bit std logic vector for bargraph itself.
 Architecture is represented by by single ```p_led_driver``` combiational process with both inputs in its sensitivity list. First it checks, if enable signal is ON or OFF. If enable is OFF, it will switch off all the LEDs and if it is ON it will continue to determine value of distance level and will light up the LEDs accordingly.
-Code for module below:
+#### Code for module
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -87,7 +89,7 @@ begin
     end process p_led_driver;    
 end Behavioral;
 ```
-Testbech for LED module:
+#### Testbech for LED module
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -166,8 +168,8 @@ begin
     end process p_stimulus;
 end Behavioral;
 ```
-Simulation Waveforms:
-
+#### Simulation Waveforms:
+![simulation LEDs](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/LEDs%20simul.png)
 ## TOP module description and simulations
 
 Write your text here.

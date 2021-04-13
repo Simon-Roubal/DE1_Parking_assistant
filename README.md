@@ -32,7 +32,6 @@ Board is fitted with bargraph itself, liminig resistors and 2 pinheader blocks. 
 |:--:| 
 |*Board design*|
 |![schematic LEDs](https://github.com/Simon-Roubal/DE1_Parking_assistant/blob/main/Images/Module%20schematic.png)|
-|:--:| 
 |*Board schematic*|
 ## VHDL modules description and simulations
 
